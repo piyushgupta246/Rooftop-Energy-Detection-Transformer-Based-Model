@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Solar Potential Analysis{% endblock %}
+
+{% block content %}
+<div class="main-content two-column">
+    <div class="main-app">
+        <div class="control-panel card">
+            <div class="control-panel-sections">
+                <section class="upload-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-upload"></i>
+                        Upload GeoTIFF Image
+                    </h2>
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <div class="file-upload">
+                            <div class="file-input-wrapper">
+                                <label for="file-input" class="file-input-button">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                    <span id="file-name">Choose File</span>
+                                </label>
+                                <input id="file-input" type="file" name="file" accept=".tif,.tiff" required>
+                            </div>
+                            <button type="submit" class="btn">
+                                <i class="fas fa-search"></i>
+                                Analyze Image
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="roi-section">
+                    <h2 class="section-title">
+                        <i class="fas fa-map-marked-alt"></i>
+                        Region Analysis
+                    </h2>
+                    <button id="analyzeROI" class="btn" disabled>
+                        <i class="fas fa-chart-area"></i>
+                        Analyze Selected Region
+                    </button>
+                </section>
+            </div>
+        </div>
+
+        <div class="map-container card">
+            <h2 class="section-title">
+                <i class="fas fa-map"></i>
+                Live Interactive Map
+            </h2>
+            <div id="map"></div>
+        </div>
+
+        <section class="results card" id="results" style="display: none;">
+            <!-- Results will be dynamically populated -->
+        </section>
+    </div>
+    <aside class="sidebar card">
+        <h2 class="section-title">
+            <i class="fas fa-info-circle"></i>
+            About the Model
+        </h2>
+        <div class="about-content">
+            <p>
+                This application utilizes a sophisticated deep learning model to analyze satellite imagery and identify rooftops with high solar potential. The model is designed to be a powerful tool for homeowners, businesses, and researchers to assess the feasibility of solar panel installations.
+            </p>
+            <h3>How It Works</h3>
+            <ol>
+                <li>
+                    <strong>Image Preprocessing:</strong> When a GeoTIFF image is uploaded, it is first preprocessed to match the input requirements of the model. This includes resizing, normalization, and channel selection.
+                </li>
+                <li>
+                    <strong>Rooftop Segmentation:</strong> The core of the application is a U-Net-based semantic segmentation model. This model has been trained on a large dataset of satellite images to accurately identify and segment rooftops from the surrounding environment.
+                </li>
+                <li>
+                    <strong>Solar Irradiance Data:</strong> The application integrates with a solar irradiance database to fetch the average solar energy received at the location of the uploaded image. This data is crucial for calculating the potential energy generation.
+                </li>
+                <li>
+                    <strong>Potential Calculation:</strong> The segmented rooftop area is combined with the solar irradiance data and user-defined panel specifications (efficiency, etc.) to calculate the estimated annual energy generation.
+                </li>
+                <li>
+                    <strong>Visualization:</strong> The results are presented in an intuitive and interactive way, with the segmented rooftops overlaid on the map and key metrics displayed in a clear and concise manner.
+                </li>
+            </ol>
+            <h3>Model Architecture</h3>
+            <p>
+                The model is based on the U-Net architecture, which is a popular choice for image segmentation tasks. It consists of an encoder path to capture context and a decoder path to enable precise localization. The model has been trained using the Adam optimizer and a combination of Dice and Focal loss to handle class imbalance.
+            </p>
+        </div>
+    </aside>
+</div>
+{% endblock %}
