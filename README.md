@@ -32,11 +32,9 @@ The working pipeline can be summarized in four major steps:
 
 ---
 
+![Map](https://github.com/piyushgupta246/Rooftop-Energy-Detection-Transformer-Based-Model/blob/main/Segmentation%20Result/2.Map.png)
 
-Map
-![Home](https://github.com/piyushgupta246/Rooftop-Energy-Detection-Transformer-Based-Model/blob/main/Segmentation%20Result/2.Map.png)
-
-Step:-
+Step:-<br>
 [ Satellite Image ]<br>
         ⬇<br>
 [ Preprocessing: Resize, Normalize ]<br>
@@ -56,3 +54,4 @@ cd Rooftop-Energy-Detection-Transformer-Based-Model
 pip install -r requirements.txt
 
 ```
+## Develop by Piyush Kumar Gupta and My Senior(Arjun Sharma)
