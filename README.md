@@ -31,8 +31,8 @@ The working pipeline can be summarized in four major steps:
 ## 📜 Workflow Diagram (Text-based)
 
 ![Home](https://github.com/piyushgupta246/Rooftop-Energy-Detection-Transformer-Based-Model/blob/main/Segmentation%20Result/1.Home.png)
-###Map-
 
+Map
 ![Home](https://github.com/piyushgupta246/Rooftop-Energy-Detection-Transformer-Based-Model/blob/main/Segmentation%20Result/2.Map.png)
 
 
