@@ -36,6 +36,18 @@ The working pipeline can be summarized in four major steps:
 Map
 ![Home](https://github.com/piyushgupta246/Rooftop-Energy-Detection-Transformer-Based-Model/blob/main/Segmentation%20Result/2.Map.png)
 
+Step:-
+[ Satellite Image ]<br>
+        ⬇<br>
+[ Preprocessing: Resize, Normalize ]<br>
+        ⬇<br>
+[ Transformer Model (ViT) ]<br>
+        ⬇<br>
+[ Rooftop Segmentation Mask ]<br>
+        ⬇<br>
+[ Area Calculation + Solar Data ]<br>
+        ⬇<br>
+[ Energy Potential Output ]<br>
 
 ## ⚙️ Installation
 ```bash
